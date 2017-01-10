@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3D49DF1C91DBC000C439D2 /* libhello.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3D49DE1C91DBC000C439D2 /* libhello.a */; };
 		2B92580E1C6DAE7900C219CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92580D1C6DAE7900C219CD /* AppDelegate.swift */; };
 		2B9258101C6DAE7900C219CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92580F1C6DAE7900C219CD /* ViewController.swift */; };
 		2B9258131C6DAE7900C219CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9258111C6DAE7900C219CD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3D49DE1C91DBC000C439D2 /* libhello.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhello.a; sourceTree = "<group>"; };
 		2B92580A1C6DAE7900C219CD /* RustHelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RustHelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B92580D1C6DAE7900C219CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B92580F1C6DAE7900C219CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		2B9258291C6DAE7900C219CD /* RustHelloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RustHelloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B92582D1C6DAE7900C219CD /* RustHelloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustHelloWorldUITests.swift; sourceTree = "<group>"; };
 		2B92582F1C6DAE7900C219CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B92583B1C6DAF7D00C219CD /* hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hello.h; sourceTree = "<group>"; };
+		2B92583E1C6DAFCD00C219CD /* RustHelloWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RustHelloWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3D49DF1C91DBC000C439D2 /* libhello.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +102,15 @@
 		2B92580C1C6DAE7900C219CD /* RustHelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				2B92583B1C6DAF7D00C219CD /* hello.h */,
 				2B92580D1C6DAE7900C219CD /* AppDelegate.swift */,
+				2B3D49DE1C91DBC000C439D2 /* libhello.a */,
 				2B92580F1C6DAE7900C219CD /* ViewController.swift */,
 				2B9258111C6DAE7900C219CD /* Main.storyboard */,
 				2B9258141C6DAE7900C219CD /* Assets.xcassets */,
 				2B9258161C6DAE7900C219CD /* LaunchScreen.storyboard */,
 				2B9258191C6DAE7900C219CD /* Info.plist */,
+				2B92583E1C6DAFCD00C219CD /* RustHelloWorld-Bridging-Header.h */,
 			);
 			path = RustHelloWorld;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 					2B9258091C6DAE7900C219CD = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = WQ3KE8U988;
+						LastSwiftMigration = 0820;
 					};
 					2B92581D1C6DAE7900C219CD = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -404,8 +413,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RustHelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RustHelloWorld",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kja.RustHelloWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RustHelloWorld/RustHelloWorld-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -415,8 +430,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RustHelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RustHelloWorld",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kja.RustHelloWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RustHelloWorld/RustHelloWorld-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -487,6 +508,7 @@
 				2B9258341C6DAE7900C219CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B9258351C6DAE7900C219CD /* Build configuration list for PBXNativeTarget "RustHelloWorldTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +517,7 @@
 				2B9258371C6DAE7900C219CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B9258381C6DAE7900C219CD /* Build configuration list for PBXNativeTarget "RustHelloWorldUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +526,7 @@
 				2B92583A1C6DAE7900C219CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
