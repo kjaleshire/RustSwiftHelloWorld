@@ -1,0 +1,11 @@
+[package]
+name = "hello"
+version = "0.1.0"
+authors = ["Kyle Aleshire <kjaleshire@gmail.com>"]
+
+[dependencies]
+libc = "0.2.7"
+
+[lib]
+name = "hello"
+crate-type = ["staticlib"]
